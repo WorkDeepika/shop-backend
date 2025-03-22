@@ -14,7 +14,7 @@ const dataSchema = new mongoose.Schema(
     backED: { type: String, default: null },
     // duration: { type: String, default: null },
     // language: { type: String, default: null },
-    // email: { type: String, default: null },
+    surveyDuration: { type: String, default: null },
     name: { type: String, default: null },
     contact: { type: mongoose.Schema.Types.Mixed, default: null },
     interviewerName: { type: String, default: null },
