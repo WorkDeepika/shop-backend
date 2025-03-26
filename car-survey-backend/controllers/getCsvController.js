@@ -17,61 +17,9 @@ const exportDataToXLSX = async (req, res) => {
 
         // Define the expected fields
         const expectedFields = [
-            "_id","startTime", "startDate", "endTime", "endDate", "duration", "language", "email", "name", "contact", "interviewerName", "interviewerId", "address",
-            "vehRegNo","city", "TypeOfSegment", 
-            "Q1", "Q1a", 
-            "Q2_1_Month", "Q2_2_Month", "Q2_3_Month", "Q2_4_Month", "Q2_5_Month", "Q2_6_Month", "Q2_7_Month", 
-            "Q3", "Q3a", "Q4", "Q5", "Q5_other", 
-            "Q6_1_Models",
-            "Q6_2_Models",
-            "Q6_3_Models",
-            "Q6_4_Models",
-            "Q6_5_Models",
-            "Q6_6_Models",
-            "Q6_7_Models",
-            "Q6_8_Models",
-            "Q6_9_Models",
-            "Q6_10_Models",
-            "Q6_11_Models",
-            "Q6_12_Models",
-            "Q6_13_Models",
-            "Q6_14_Models",
-            "Q6_15_Models",
-            "Q6_16_Models",
-            "Q6_17_Models",
-            "Q6_18_Models",
-            "Q6_19_Models",
-            "Q6_20_Models",
-            "Q7_1_Models",
-            "Q7_2_Models",
-            "Q7_3_Models",
-            "Q7_4_Models",
-            "Q7_5_Models",
-            "Q7_6_Models",
-            "Q7_7_Models",
-            "Q7_8_Models",
-            "Q7_9_Models",
-            "Q7_10_Models",
-            "Q7_11_Models",
-            "Q7_12_Models",
-            "Q7_13_Models",
-            "Q7_14_Models",
-            "Q7_15_Models",
-            "Q7_16_Models",
-            "Q7_17_Models",
-            "Q7_18_Models",
-            "Q7_19_Models",
-            "Q7_20_Models",
-            "Q7_99_selected",
-            "Q8_brand",
-            "Q8_models", "Q8a", 
-            "Q9", 
-            "Q10", "Q10_other", 
-            "Q11_Rank1","Q11_Rank1_other", "Q11_Rank2", "Q11_Rank2_other", "Q11_Rank3","Q11_Rank3_other", 
-            "Q12", "Q13", "Q14", "Q15", "Q16", "Q17", "Q17_lakhs", "Q17_thousands","Q18", "Q19", "Q20", "Q21", "Q22", "Q23",
-            
-            "latitude", "longitude", "backST", "backSD", "backET", "backED", "Q1a_rec", "Q2_rec", "Q5_rec", "Q8_rec","Q10_rec","Q23_rec"
-
+            "_id","startTime", "startDate", "endTime", "endDate", 
+            "duration", "surveyDuration","shop_nm", "name","contact","interviewerName","interviewerId","address","city","UserId",
+            "latitude", "longitude", "backST", "backSD", "backET", "backED",
         ];
 
         const formatDate = (dateString) => {
@@ -181,7 +129,7 @@ const exportDataToXLSX = async (req, res) => {
         .replace(/:/g, '-');
         
           // Combine date and time for unique naming
-          const fileName = `carsurveybackend-${formattedDate}-${formattedTime}.xlsx`;
+          const fileName = `shopbackend-${formattedDate}-${formattedTime}.xlsx`;
         const uploadParams = {
             Bucket: "carsurveybackend", // Replace with your bucket name
             Key: `xlsx/${fileName}`,
